@@ -1,0 +1,30 @@
+# Kirill - lotin bot
+# library import qilish
+from Crill_to_latin_bot.transliterate import to_cyrillic, to_latin
+import telebot
+
+# tokenni kiritib telegrambot bn boglanish
+TOKEN = "5288406155:AAHJR3FGD8xLDJdImYWSWErHU0ano-4L83Q"
+bot = telebot.TeleBot(TOKEN, parse_mode=None)
+
+# # start, help commandalarga javob beruvchi func
+@bot.message_handler(commands=['start'])
+def send_welcome(message):
+    ans = "Assalomu alaikum Xush kelibsiz! "
+    ans += "\n O`zgartirmoqchi bo`lgan Matnni kiriting:"
+    bot.reply_to(message, ans)
+
+# har qanday habarga javob qaytarish
+@bot.message_handler(func=lambda message: True)
+def echo_all(message):
+    msg = message.text
+# berilgan matn qaydayligini tekshirib olish sharti
+# ans = lambda msg: to_cyrillic(msg) if msg.isascii() else to_latin(msg)  #first way
+    if msg.isascii():    #second way
+        ans = to_cyrillic(msg)
+    else:
+        ans = to_latin(msg)
+#berilgan matnni turiga qarab qayta ozgartirib yuborish
+    bot.reply_to(message, ans)
+
+bot.polling()
