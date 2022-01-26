@@ -2,6 +2,8 @@
 import re
 import sys
 
+# edit
+
 LATIN_TO_CYRILLIC = {
     'a': 'а', 'A': 'А',
     'b': 'б', 'B': 'Б',
