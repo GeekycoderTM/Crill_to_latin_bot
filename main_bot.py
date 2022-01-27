@@ -12,6 +12,7 @@ bot = telebot.TeleBot(TOKEN, parse_mode=None)
 def send_welcome(message):
     ans = "Assalomu alaikum Xush kelibsiz! "
     ans += "\n O`zgartirmoqchi bo`lgan Matnni kiriting:"
+    ans += "\n Unutmang biz  faqat Lotin va Krill alifbosidan iborat Matnlar bilan ishlay olamiz!!!"
     bot.reply_to(message, ans)
 
 # har qanday habarga javob qaytarish
