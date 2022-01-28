@@ -4,7 +4,7 @@ from Crill_to_latin_bot.transliterate import to_cyrillic, to_latin
 import telebot
 
 # tokenni kiritib telegrambot bn boglanish
-TOKEN = "5288406155:AAHJR3FGD8xLDJdImYWSWErHU0ano-4L83Q"
+TOKEN = "your taken token from telegram bot father"
 bot = telebot.TeleBot(TOKEN, parse_mode=None)
 
 # # start, help commandalarga javob beruvchi func
